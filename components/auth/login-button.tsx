@@ -1,7 +1,7 @@
 "use client";
 
 // IMPORTS -
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 // PARTIALS -
 interface LoginButtonProps {
