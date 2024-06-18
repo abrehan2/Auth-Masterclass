@@ -3,7 +3,7 @@
 // IMPORTS -
 import * as z from "zod";
 import { RegisterSchema } from "@/schemas";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
 import { getUserByEmail } from "@/data/user";
 
