@@ -1,5 +1,6 @@
 // IMPORTS -
 import { auth, signOut } from "@/auth";
+import { authRoutes } from "@/routes";
 
 /**
            * YOU CAN ALSO USE THIS IN CLIENT COMPONENTS BUT NOT BY IMPORTING IT FROM HERE (auth.ts), 
@@ -15,7 +16,9 @@ export default async function Settings() {
       <form
         action={async () => {
           "use server";
-          await signOut();
+          await signOut({
+            redirectTo: authRoutes[0],
+          });
         }}
       >
         <button type="submit">Sign out</button>
