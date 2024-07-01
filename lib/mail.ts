@@ -30,3 +30,16 @@ export const sendVerificationForResetPassword = async (
     html: `<p>Click <a href="${confirmLink}">here</a> to change your password.</p>`,
   });
 };
+
+// SEND EMAIL TO CONFIRM TWO FACTOR AUTHENTICATION -
+export const sendTwoFactorVerificationEmail = async (
+  email: string,
+  token: string
+) => {
+  await resend.emails.send({
+    from: String(process.env.EMAIL_HOST),
+    to: email,
+    subject: "2FA code",
+    html: `<p>Your 2FA code is ${token}</p>`,
+  });
+};
