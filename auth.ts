@@ -53,6 +53,21 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       return session;
     },
+
+    async signIn({ user, account }) {
+      if (account?.provider !== "credentials") {
+        return true;
+      }
+
+      const existingUser = await getUserByID(String(user?.id));
+
+      // PREVENT SIGN IN WITHOUT EMAIL VERIFICATON -
+      if (!existingUser?.emailVerified) return false;
+
+      // TODO: ADD 2FA CHECK -
+
+      return true;
+    },
   },
   session: { strategy: "jwt" },
   ...authConfig,
