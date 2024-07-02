@@ -21,21 +21,21 @@ export default function Navbar() {
           variant={pathname === "/server" ? "default" : "outline"}
           className="rounded-xl"
         >
-          <Link href={"/settings"}>Server</Link>
+          <Link href={"/server"}>Server</Link>
         </Button>
         <Button
           asChild
           variant={pathname === "/client" ? "default" : "outline"}
           className="rounded-xl"
         >
-          <Link href={"/settings"}>Client</Link>
+          <Link href={"/client"}>Client</Link>
         </Button>
         <Button
           asChild
           variant={pathname === "/admin" ? "default" : "outline"}
           className="rounded-xl"
         >
-          <Link href={"/settings"}>Admin</Link>
+          <Link href={"/admin"}>Admin</Link>
         </Button>
         <Button
           asChild
